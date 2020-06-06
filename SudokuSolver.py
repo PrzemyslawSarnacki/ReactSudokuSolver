@@ -1,5 +1,3 @@
-
-
 def show_board(solved_board):
     for i, column_element in enumerate(solved_board):
         if i % 3 == 0:
