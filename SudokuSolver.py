@@ -1,12 +1,3 @@
-board = [[3, 0, 6, 5, 0, 8, 4, 0, 0], 
-          [5, 2, 0, 0, 0, 0, 0, 0, 0], 
-          [0, 8, 7, 0, 0, 0, 0, 3, 1], 
-          [0, 0, 3, 0, 1, 0, 0, 8, 0], 
-          [9, 0, 0, 8, 6, 3, 0, 0, 5], 
-          [0, 5, 0, 0, 9, 0, 6, 0, 0], 
-          [1, 3, 0, 0, 0, 0, 2, 5, 0], 
-          [0, 0, 0, 0, 0, 0, 0, 7, 4], 
-          [0, 0, 5, 2, 0, 6, 3, 0, 0]] 
 
 
 def show_board(solved_board):
@@ -130,10 +121,22 @@ def solve(solved_board):
             solved_board[row][column] = 0
     return False
 
-if(check_board(board)):        
-    if(solve(board)):
-        print("thats right")
-    else: 
-        print("No solution exists")
-else:
-    print("check duplicates")
+if __name__ == "__main__":    
+    
+    board = [[3, 0, 6, 5, 0, 8, 4, 0, 0], 
+          [5, 2, 0, 0, 0, 0, 0, 0, 0], 
+          [0, 8, 7, 0, 0, 0, 0, 3, 1], 
+          [0, 0, 3, 0, 1, 0, 0, 8, 0], 
+          [9, 0, 0, 8, 6, 3, 0, 0, 5], 
+          [0, 5, 0, 0, 9, 0, 6, 0, 0], 
+          [1, 3, 0, 0, 0, 0, 2, 5, 0], 
+          [0, 0, 0, 0, 0, 0, 0, 7, 4], 
+          [0, 0, 5, 2, 0, 6, 3, 0, 0]] 
+
+    if(check_board(board)):        
+        if(solve(board)):
+            print("thats right")
+        else: 
+            print("No solution exists")
+    else:
+        print("check duplicates")
