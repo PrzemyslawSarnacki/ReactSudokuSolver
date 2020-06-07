@@ -13,7 +13,6 @@ const App = () => {
             [0, 0, 0, 0, 0, 0, 0, 7, 4],
             [0, 0, 5, 2, 0, 6, 3, 0, 0]]
 
-    var newb : number[] = [3,3,3,3,3]
     const handleChange = (e: any) => {
         console.log(e.value)
 
@@ -21,9 +20,9 @@ const App = () => {
     return (
         <div className="App">
             <header className="App-header">
-                <p>
+                <div>
              {board.map((row, i) => {
-                 return (<div>
+                 return (<div key={i}>
                      {row.map((element, j) => {
                          return (
                              <input defaultValue={element} key={j} onChange={handleChange} style={{ width: "15px" }} />
@@ -31,7 +30,7 @@ const App = () => {
                     })}
                  </div>)
             })}
-                </p>
+                </div>
             </header>
         </div>
     );
