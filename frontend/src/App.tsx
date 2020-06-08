@@ -13,19 +13,22 @@ const App = () => {
             [0, 0, 0, 0, 0, 0, 0, 7, 4],
             [0, 0, 5, 2, 0, 6, 3, 0, 0]]
 
-    const handleChange = (e: any) => {
-        console.log(e.value)
-
+    // const handleChange = (e: any) => {
+    const handleChange = (i: number, j: number, e: any) => {
+        console.log(e.target.value)
+        console.log(board[i][j])
+        console.log(board)
+        board[i][j] = parseInt(e.target.value)
     }
     return (
         <div className="App">
             <header className="App-header">
                 <div>
-             {board.map((row, i) => {
+             {board.map((row, i: number) => {
                  return (<div key={i}>
-                     {row.map((element, j) => {
+                     {row.map((element, j: number) => {
                          return (
-                             <input defaultValue={element} key={j} onChange={handleChange} style={{ width: "15px" }} />
+                             <input type="number" defaultValue={element} key={j} onChange={(e: any) => handleChange(i, j, e)} style={{ width: "15px" }} />
                              )
                     })}
                  </div>)
