@@ -53,8 +53,8 @@ def square_valid(solved_board, position, num):
     # Check box
     square_row = position[0]//3
     square_column = position[1]//3
-
     for i in range(square_row*3, square_row*3 + 3):
+        print(i)
         for j in range(square_column*3, square_column*3 + 3):
             if solved_board[i][j] == num and solved_board[i][j] != 0:
                 return False
@@ -131,10 +131,12 @@ if __name__ == "__main__":
           [0, 0, 0, 0, 0, 0, 0, 7, 4], 
           [0, 0, 5, 2, 0, 6, 3, 0, 0]] 
 
-    if(check_board(board)):        
-        if(solve(board)):
-            print("thats right")
-        else: 
-            print("No solution exists")
-    else:
-        print("check duplicates")
+
+    print(square_valid(board,[8,1],3))
+    # if(check_board(board)):        
+    #     if(solve(board)):
+    #         print("thats right")
+    #     else: 
+    #         print("No solution exists")
+    # else:
+    #     print("check duplicates")
