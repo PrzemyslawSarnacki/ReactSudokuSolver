@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import './App.css';
 import { ok } from 'assert';
 
@@ -13,7 +13,7 @@ var solvedBoard: number[][] = [[3, 0, 6, 5, 0, 8, 4, 0, 0],
 [0, 0, 5, 2, 0, 6, 3, 0, 0]]
 
 const App = () => {
-    
+
     const [show, setShow] = useState(false);
 
     var board: number[][] = [[3, 0, 6, 5, 0, 8, 4, 0, 0],
@@ -25,14 +25,20 @@ const App = () => {
     [1, 3, 0, 0, 0, 0, 2, 5, 0],
     [0, 0, 0, 0, 0, 0, 0, 7, 4],
     [0, 0, 5, 2, 0, 6, 3, 0, 0]]
-    
+
     const handleChange = (i: number, j: number, e: any) => {
-        board[i][j] = parseInt(e.target.value)
-        solvedBoard[i][j] = parseInt(e.target.value)
-        setShow(true);
-        solve();
+        if (e.target.value) {
+            board[i][j] = parseInt(e.target.value)
+            solvedBoard = board
+            console.log(solvedBoard)
+            setShow(true);
+            solve();
+        }
+        else {
+            console.log("wrong")
+        }
     }
-    
+
     const handleClick = () => {
         setShow(true);
         solve();
@@ -124,24 +130,24 @@ const App = () => {
                             })}
                         </div>)
                     })}
-                <button onClick={handleClick}>Look</button>
-                <div>
-                    {show ? (
-                        <div>
-                            {solvedBoard.map((row, i: number) => {
-                                return (<div key={i}>
-                                {row.map((element, j: number) => {
-                                    return (
-                                        <input defaultValue={element} key={j} onChange={(e: any) => handleChange(i, j, e)} style={{ width: "15px" }} />
-                                        )
-                                    })}
-                            </div>)
-                        })}
-                        </div>
+                    <button onClick={handleClick}>Look</button>
+                    <div>
+                        {show ? (
+                            <div>
+                                {solvedBoard.map((row, i: number) => {
+                                    return (<div key={i}>
+                                        {row.map((element, j: number) => {
+                                            return (
+                                                <input defaultValue={element} key={j} onChange={(e: any) => handleChange(i, j, e)} style={{ width: "15px" }} />
+                                            )
+                                        })}
+                                    </div>)
+                                })}
+                            </div>
 
-                    ) :( null) } 
-                </div>
-                
+                        ) : (null)}
+                    </div>
+
                 </div>
             </header>
         </div>
