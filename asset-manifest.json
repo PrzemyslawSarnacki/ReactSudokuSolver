@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/ReactSudokuSolver/static/css/main.338d5bd9.chunk.css",
-    "main.js": "/ReactSudokuSolver/static/js/main.d6d7bd64.chunk.js",
-    "main.js.map": "/ReactSudokuSolver/static/js/main.d6d7bd64.chunk.js.map",
+    "main.css": "/ReactSudokuSolver/static/css/main.f5e0eadd.chunk.css",
+    "main.js": "/ReactSudokuSolver/static/js/main.0b2cde04.chunk.js",
+    "main.js.map": "/ReactSudokuSolver/static/js/main.0b2cde04.chunk.js.map",
     "runtime-main.js": "/ReactSudokuSolver/static/js/runtime-main.8efca481.js",
     "runtime-main.js.map": "/ReactSudokuSolver/static/js/runtime-main.8efca481.js.map",
     "static/js/2.d1362c8d.chunk.js": "/ReactSudokuSolver/static/js/2.d1362c8d.chunk.js",
     "static/js/2.d1362c8d.chunk.js.map": "/ReactSudokuSolver/static/js/2.d1362c8d.chunk.js.map",
     "index.html": "/ReactSudokuSolver/index.html",
-    "precache-manifest.5f8f5e715d3b8fe992359b274c42a960.js": "/ReactSudokuSolver/precache-manifest.5f8f5e715d3b8fe992359b274c42a960.js",
+    "precache-manifest.bcea3ab5531b12f5b7d52af0e88d825f.js": "/ReactSudokuSolver/precache-manifest.bcea3ab5531b12f5b7d52af0e88d825f.js",
     "service-worker.js": "/ReactSudokuSolver/service-worker.js",
-    "static/css/main.338d5bd9.chunk.css.map": "/ReactSudokuSolver/static/css/main.338d5bd9.chunk.css.map",
+    "static/css/main.f5e0eadd.chunk.css.map": "/ReactSudokuSolver/static/css/main.f5e0eadd.chunk.css.map",
     "static/js/2.d1362c8d.chunk.js.LICENSE.txt": "/ReactSudokuSolver/static/js/2.d1362c8d.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.8efca481.js",
     "static/js/2.d1362c8d.chunk.js",
-    "static/css/main.338d5bd9.chunk.css",
-    "static/js/main.d6d7bd64.chunk.js"
+    "static/css/main.f5e0eadd.chunk.css",
+    "static/js/main.0b2cde04.chunk.js"
   ]
 }

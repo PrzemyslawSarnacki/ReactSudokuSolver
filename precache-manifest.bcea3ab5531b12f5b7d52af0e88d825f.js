@@ -1,11 +1,11 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "45ced408697cd3a81969bf5ac40150c8",
+    "revision": "40eb75a50436fafed44967366055f7d6",
     "url": "/ReactSudokuSolver/index.html"
   },
   {
-    "revision": "56e37dbeb1c8e6787b04",
-    "url": "/ReactSudokuSolver/static/css/main.338d5bd9.chunk.css"
+    "revision": "e2852d89777ad72a0482",
+    "url": "/ReactSudokuSolver/static/css/main.f5e0eadd.chunk.css"
   },
   {
     "revision": "417212b3bcffa4974e19",
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/ReactSudokuSolver/static/js/2.d1362c8d.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "56e37dbeb1c8e6787b04",
-    "url": "/ReactSudokuSolver/static/js/main.d6d7bd64.chunk.js"
+    "revision": "e2852d89777ad72a0482",
+    "url": "/ReactSudokuSolver/static/js/main.0b2cde04.chunk.js"
   },
   {
     "revision": "4fc009f222b771636285",
