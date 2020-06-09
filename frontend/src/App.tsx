@@ -35,10 +35,8 @@ const App = () => {
     const handleChange = (i: number, j: number, e: any) => {
         if (e.target.value) {
             board[i][j] = parseInt(e.target.value)
-            console.log(board)
+            checkBoard();
             setSolvedBoard(board);
-            console.log(checkBoard());
-            console.log(duplicate)
         }
         else if (e.target.value < 0 || e.target.value > 9){
             board[i][j] = 0
@@ -96,7 +94,6 @@ const App = () => {
             }
         }
         if (duplicateCounter > 1) {
-            console.log(duplicatePosition)
             setDuplicate(duplicatePosition);
             return true;
         }
@@ -213,7 +210,7 @@ const App = () => {
     return (
         <div className="App">
             <header className="App-header">
-                <div>
+                <div className="not-solved-box">
                     {board.map((row, i: number) => {
                         return (<div key={i}>
                             {row.map((element, j: number) => {
@@ -234,7 +231,7 @@ const App = () => {
                         <button className="button" onClick={handleClick}>Solve!</button>
                         <button className="button" onClick={handleClear}>Clear</button>
                     </div>
-                    <div>
+                    <div className="solved-box">
                         {show ? (
                             <div>
                                 {solvedBoard.map((row, i: number) => {

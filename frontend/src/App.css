@@ -21,7 +21,7 @@
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  /* color: white; */
 }
 
 .App-link {
@@ -76,7 +76,8 @@
 }
 .solved{
  color: black;
- font-size: 15px; 
+ font-size: 15px;
+ margin-bottom: 20px; 
 }
 .square:after {
   content: "";
@@ -84,6 +85,12 @@
   padding-bottom: 100%;
 }
 
+ .solved-box {
+  margin-bottom: 100px;
+} 
+.not-solved-box {
+  margin-top: 20px;
+}
 .content {
   position: absolute;
   width: 100%;
@@ -104,5 +111,4 @@
   text-align: center;
   text-transform: uppercase;
   color: #FFF;
-  
 }
