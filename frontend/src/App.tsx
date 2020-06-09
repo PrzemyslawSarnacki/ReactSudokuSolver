@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.css';
 import { ok } from 'assert';
 
@@ -27,7 +27,10 @@ const App = () => {
         [1, 3, 0, 0, 0, 0, 2, 5, 0],
         [0, 0, 0, 0, 0, 0, 0, 7, 4],
         [0, 0, 5, 2, 0, 6, 3, 0, 0]]);
-
+    
+    useEffect(() => {
+        console.log("updated")
+    }, [duplicate])
 
     const handleChange = (i: number, j: number, e: any) => {
         if (e.target.value) {
@@ -211,18 +214,26 @@ const App = () => {
         <div className="App">
             <header className="App-header">
                 <div>
-                    {duplicate}
                     {board.map((row, i: number) => {
                         return (<div key={i}>
                             {row.map((element, j: number) => {
-                                return (
-                                    <input type="number" defaultValue={element} key={j} onChange={(e: any) => handleChange(i, j, e)} style={{ width: "15px" }} />
-                                )
+                                if (i === duplicate[0] && j === duplicate[1]) {
+                                    return (
+                                        <input className="wrong-square" type="number" defaultValue={element} key={j} onChange={(e: any) => handleChange(i, j, e)} />
+                                    )
+                                }
+                                else{
+                                    return (
+                                        <input className="square" type="number" defaultValue={element} key={j} onChange={(e: any) => handleChange(i, j, e)} />
+                                    )
+                                }
                             })}
                         </div>)
                     })}
-                    <button onClick={handleClick}>Solve!</button>
-                    <button onClick={handleClear}>Clear</button>
+                    <div className="not-solved">
+                        <button className="button" onClick={handleClick}>Solve!</button>
+                        <button className="button" onClick={handleClear}>Clear</button>
+                    </div>
                     <div>
                         {show ? (
                             <div>
@@ -230,7 +241,11 @@ const App = () => {
                                     return (<div key={i}>
                                         {row.map((element, j: number) => {
                                             return (
-                                                <b key={j} style={{ width: "15px" }}>{element}</b>
+                                                <div key={i} className="square row">
+                                                    <p>
+                                                        <text className="solved" key={j} >{element}</text>
+                                                    </p>
+                                                </div>
                                             )
                                         })}
                                     </div>)
