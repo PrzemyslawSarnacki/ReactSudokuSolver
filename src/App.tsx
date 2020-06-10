@@ -3,7 +3,6 @@ import './App.css';
 import { ok } from 'assert';
 
 
-
 const App = () => {
 
     const [show, setShow] = useState(false);
@@ -27,10 +26,14 @@ const App = () => {
         [1, 3, 0, 0, 0, 0, 2, 5, 0],
         [0, 0, 0, 0, 0, 0, 0, 7, 4],
         [0, 0, 5, 2, 0, 6, 3, 0, 0]]);
-    
+        
     useEffect(() => {
         console.log("updated")
     }, [duplicate])
+    
+    useEffect(() => {
+        console.log("updated")
+    }, [board])
 
     const handleChange = (i: number, j: number, e: any) => {
         if (e.target.value) {
@@ -52,8 +55,23 @@ const App = () => {
         solve();
     }
     
-    const handleClear = () => {
+    const handleHide = () => {
         setShow(false);
+    }
+    const handleClear = () => {
+        
+        var emptyBoard: number[][] = [[0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0]]
+        setShow(false);
+        setBoard(emptyBoard);
+        console.log(board);
     }
 
     const columnValid = (column: number, num: number) => {
@@ -212,16 +230,16 @@ const App = () => {
             <header className="App-header">
                 <div className="not-solved-box">
                     {board.map((row, i: number) => {
-                        return (<div key={i}>
+                        return (<div>
                             {row.map((element, j: number) => {
                                 if (i === duplicate[0] && j === duplicate[1]) {
                                     return (
-                                        <input className="wrong-square" type="number" defaultValue={element} key={j} onChange={(e: any) => handleChange(i, j, e)} />
-                                    )
-                                }
-                                else{
-                                    return (
-                                        <input className="square" type="number" defaultValue={element} key={j} onChange={(e: any) => handleChange(i, j, e)} />
+                                        <input className="wrong-square" type="number" key={`${Math.floor((Math.random() * 1000))}-min`} defaultValue={element} onChange={(e: any) => handleChange(i, j, e)} />
+                                        )
+                            }
+                            else {
+                                return (
+                                    <input className="square" type="number" key={`${Math.floor((Math.random() * 1000))}-min`} defaultValue={element} onChange={(e: any) => handleChange(i, j, e)} />
                                     )
                                 }
                             })}
@@ -229,6 +247,7 @@ const App = () => {
                     })}
                     <div className="not-solved">
                         <button className="button" onClick={handleClick}>Solve!</button>
+                        <button className="button" onClick={handleHide}>Hide</button>
                         <button className="button" onClick={handleClear}>Clear</button>
                     </div>
                     <div className="solved-box">
